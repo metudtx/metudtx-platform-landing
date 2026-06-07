@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>METU DTX Digital Transformation Platform</title>
+  <meta name="description" content="METU DTX Digital Transformation Platform supports company registration, self-assessment, expert analysis, digital maturity reporting and transformation roadmap activities.">
+  <style>
+    :root {
+      --bg: #f7faf9;
+      --panel: #ffffff;
+      --ink: #101827;
+      --muted: #5f6b7a;
+      --line: #e1e8ec;
+      --brand: #243c7a;
+      --brand-dark: #162955;
+      --teal: #0f766e;
+      --soft-blue: #eef3ff;
+      --soft-teal: #e7f4f1;
+      --warning: #fff7ed;
+      --warning-line: #fed7aa;
+      --shadow: 0 24px 70px rgba(16, 24, 39, 0.10);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 15% 5%, rgba(36, 60, 122, 0.14), transparent 30%),
+        radial-gradient(circle at 88% 12%, rgba(15, 118, 110, 0.13), transparent 28%),
+        var(--bg);
+      color: var(--ink);
+    }
+
+    .page-shell {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 34px 0 32px;
+    }
+
+    header.topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 18px 0;
+    }
+
+    .brand {
+      font-weight: 850;
+      letter-spacing: -0.04em;
+      font-size: 1.28rem;
+    }
+
+    .brand span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 650;
+      letter-spacing: 0;
+      margin-top: 2px;
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 750;
+      font-size: 0.94rem;
+    }
+
+    nav a:hover {
+      color: var(--brand-dark);
+    }
+
+    .hero {
+      min-height: 460px;
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 36px;
+      align-items: center;
+      padding: 54px 0 42px;
+    }
+
+    .eyebrow {
+      color: var(--teal);
+      font-size: 0.82rem;
+      font-weight: 850;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.8rem, 7vw, 5.8rem);
+      line-height: 0.96;
+      letter-spacing: -0.07em;
+    }
+
+    .lead {
+      max-width: 740px;
+      margin: 26px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      line-height: 1.65;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 850;
+      border: 1px solid var(--line);
+    }
+
+    .button.primary {
+      background: var(--brand);
+      color: #fff;
+      border-color: var(--brand);
+    }
+
+    .button.primary:hover {
+      background: var(--brand-dark);
+    }
+
+    .button.secondary {
+      background: rgba(255, 255, 255, 0.78);
+      color: var(--ink);
+    }
+
+    .status-card {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .status-card h2 {
+      margin: 0 0 12px;
+      font-size: 1.35rem;
+      letter-spacing: -0.04em;
+    }
+
+    .status-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .pill {
+      background: var(--soft-teal);
+      color: var(--teal);
+      border: 1px solid rgba(15, 118, 110, 0.18);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 0.86rem;
+      font-weight: 800;
+    }
+
+    section {
+      margin-top: 28px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      letter-spacing: -0.06em;
+    }
+
+    .section-title p {
+      max-width: 760px;
+      margin: 14px auto 0;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 1.05rem;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .step {
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 22px;
+      min-height: 220px;
+      box-shadow: 0 16px 48px rgba(16, 24, 39, 0.07);
+    }
+
+    .step-num {
+      width: 34px;
+      height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: var(--brand);
+      color: #fff;
+      font-weight: 850;
+      margin-bottom: 16px;
+    }
+
+    .step h3 {
+      margin: 0 0 10px;
+      font-size: 1.05rem;
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 0.94rem;
+    }
+
+    .outputs {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .output-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 16px 48px rgba(16, 24, 39, 0.07);
+    }
+
+    .output-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.18rem;
+      letter-spacing: -0.035em;
+    }
+
+    .output-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .notice {
+      background: var(--warning);
+      border: 1px solid var(--warning-line);
+      border-radius: 26px;
+      padding: 24px;
+      color: #7c2d12;
+      line-height: 1.6;
+    }
+
+    .notice strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #7c2d12;
+    }
+
+    footer {
+      margin-top: 30px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    footer a {
+      color: var(--brand-dark);
+      text-decoration: none;
+      font-weight: 850;
+    }
+
+    @media (max-width: 1020px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .outputs {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .page-shell {
+        width: min(100% - 28px, 1120px);
+        padding-top: 18px;
+      }
+
+      header.topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav {
+        justify-content: flex-start;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 48px 0 36px;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page-shell">
+    <header class="topbar">
+      <div class="brand">
+        METU DTX Platform
+        <span>Digital Maturity Assessment & Transformation Roadmap</span>
+      </div>
+      <nav aria-label="Main navigation">
+        <a href="https://metudtx.com">Gateway</a>
+        <a href="https://dtx.metu.edu.tr">METU DTX</a>
+        <a href="https://ai4gtech.metudtx.com">AI4GTech</a>
+        <a href="mailto:info@metudtx.com">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <div class="eyebrow">METU DTX Digital Transformation Platform</div>
+        <h1>Assess. Prioritize. Roadmap. Transform.</h1>
+        <p class="lead">
+          The METU DTX Digital Transformation Platform supports companies through registration, self-assessment, expert review, maturity reporting and transformation roadmap preparation.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="https://dtx.dinamik360.com/apply">Başvuru Yap</a>
+          <a class="button secondary" href="https://dtx.dinamik360.com/Auth/Login">Giriş Yap</a>
+        </div>
+      </div>
+
+      <aside class="status-card">
+        <h2>Pilot access is active</h2>
+        <p>
+          The platform is currently available through the pilot access environment. Application and login actions are temporarily directed to the implementation partner’s secure platform environment.
+        </p>
+        <div class="pill-list">
+          <span class="pill">Company Registration</span>
+          <span class="pill">Self-Assessment</span>
+          <span class="pill">Expert Review</span>
+          <span class="pill">Maturity Report</span>
+          <span class="pill">Roadmap</span>
+        </div>
+      </aside>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Platform workflow</h2>
+        <p>
+          The platform structures the digital maturity assessment journey from company onboarding to expert analysis and roadmap outputs.
+        </p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Company registration</h3>
+          <p>Companies create their profile and submit the initial information required for the assessment process.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Self-assessment</h3>
+          <p>The company completes the digital maturity self-assessment to establish the first view of its current state.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>Expert analysis</h3>
+          <p>METU DTX experts review the data, validate findings and assess maturity across strategic digital transformation dimensions.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-num">4</div>
+          <h3>Maturity reporting</h3>
+          <p>The platform supports score-based analysis, observations, recommendations, executive summaries and detailed reports.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-num">5</div>
+          <h3>Roadmap planning</h3>
+          <p>Priority project areas, transformation actions and roadmap elements are structured for implementation planning.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Expected outputs</h2>
+        <p>
+          The platform is designed to convert assessment evidence into actionable transformation outputs.
+        </p>
+      </div>
+
+      <div class="outputs">
+        <div class="output-card">
+          <h3>Digital maturity view</h3>
+          <p>Structured analysis of current digital maturity, strengths, weaknesses and improvement potential.</p>
+        </div>
+
+        <div class="output-card">
+          <h3>Assessment report</h3>
+          <p>Standardized reporting outputs including executive summary, axis-level findings and detailed recommendations.</p>
+        </div>
+
+        <div class="output-card">
+          <h3>Transformation roadmap</h3>
+          <p>Prioritized project cards, implementation logic and roadmap elements for short-, medium- and long-term action.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="notice">
+      <strong>Geçici erişim notu</strong>
+      Platform şu anda pilot erişim ortamında hizmet vermektedir. Kurumsal alan adı ve sunucu geçişi tamamlandığında başvuru ve giriş yönlendirmeleri kalıcı METU DTX altyapısı üzerinden güncellenecektir.
+    </section>
+
+    <footer>
+      <p>
+        METU DTX — Middle East Technical University Digital Transformation & Innovation Center<br>
+        <a href="https://metudtx.com">metudtx.com</a> · <a href="mailto:info@metudtx.com">info@metudtx.com</a>
+      </p>
+    </footer>
+  </main>
+</body>
+</html>
