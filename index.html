@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>METU DTX Digital Transformation Platform</title>
   <meta name="description" content="Start a structured METU DTX digital maturity assessment, expert review, roadmap preparation and implementation-ready project planning process.">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
   <style>
     :root {
       --bg: #f6faf9;
@@ -68,19 +71,43 @@
     }
 
     .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: var(--ink);
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 172px;
+      height: auto;
+      display: block;
+      flex: 0 0 auto;
+    }
+
+    .brand-copy {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .brand-copy strong {
       font-weight: 900;
       letter-spacing: -0.045em;
-      font-size: 1.25rem;
+      font-size: 1.08rem;
+      line-height: 1.05;
       color: var(--ink);
     }
 
-    .brand span {
+    .brand-copy span {
       display: block;
       color: var(--muted);
-      font-size: 0.76rem;
+      font-size: 0.74rem;
       font-weight: 700;
       letter-spacing: 0;
-      margin-top: 2px;
+      margin-top: 3px;
+      line-height: 1.25;
     }
 
     nav {
@@ -819,6 +846,18 @@
         flex-direction: column;
       }
 
+      .brand-mark {
+        width: 154px;
+      }
+
+      .brand-copy strong {
+        font-size: 1rem;
+      }
+
+      .brand-copy span {
+        font-size: 0.72rem;
+      }
+
       nav {
         justify-content: flex-start;
       }
@@ -871,10 +910,13 @@
 <body>
   <main class="page-shell">
     <header class="topbar">
-      <div class="brand">
-        METU DTX Platform
-        <span>Digital Maturity Assessment & Transformation Roadmap</span>
-      </div>
+      <a class="brand" href="https://portal.metudtx.com" aria-label="METU DTX Platform home">
+        <img class="brand-mark" src="metu-dtx-logo.png" alt="METU DTX">
+        <span class="brand-copy">
+          <strong>Platform</strong>
+          <span>Digital Maturity Assessment & Transformation Roadmap</span>
+        </span>
+      </a>
       <nav aria-label="Main navigation">
         <a href="https://metudtx.com">Gateway</a>
         <a href="https://dtx.metu.edu.tr">METU DTX</a>
@@ -886,7 +928,7 @@
     <section class="hero">
       <div>
         <div class="eyebrow">METU DTX Digital Transformation Platform</div>
-        <h1>Start Your Digital Transformation Journey with METU DTX</h1>
+        <h1>Start Your Digital Maturity Assessment with METU DTX</h1>
         <p class="lead">
           The METU DTX Digital Transformation Platform guides companies from registration and self-assessment to expert review, evidence-based maturity scoring, roadmap preparation and implementation-ready project planning.
         </p>
