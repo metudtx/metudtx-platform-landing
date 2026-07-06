@@ -128,6 +128,42 @@
       color: var(--teal-2);
     }
 
+
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      box-shadow: 0 8px 22px rgba(15, 31, 29, 0.05);
+    }
+
+    .lang-switch a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 36px;
+      min-height: 30px;
+      padding: 0 10px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    .lang-switch a.active {
+      background: var(--teal);
+      color: #fff;
+    }
+
+    .lang-switch a:not(.active):hover {
+      color: var(--teal-2);
+      background: var(--soft-teal);
+    }
+
     .hero {
       min-height: 570px;
       display: grid;
@@ -910,7 +946,7 @@
 <body>
   <main class="page-shell">
     <header class="topbar">
-      <a class="brand" href="https://portal.metudtx.com" aria-label="METU DTX Platform ana sayfası">
+      <a class="brand" href="https://portal.metudtx.com/tr/" aria-label="METU DTX Platform ana sayfası">
         <img class="brand-mark" src="../metu-dtx-logo.png" alt="METU DTX">
         <span class="brand-copy">
           <strong>Platform</strong>
@@ -918,9 +954,9 @@
         </span>
       </a>
       <nav aria-label="Ana navigasyon">
-        <a href="https://metudtx.com">Ana Geçit</a>
+        <a href="https://metudtx.com/tr/">Ana Geçit</a>
         <a href="https://dtx.metu.edu.tr">METU DTX</a>
-        <a href="https://ai4gtech.metudtx.com">AI4GTech</a>
+        <a href="https://ai4gtech.metudtx.com/tr/">AI4GTech</a>
         <a href="mailto:info@metudtx.com">İletişim</a>
         <span class="lang-switch" aria-label="Dil seçimi"><a href="/">EN</a><a class="active" href="/tr/">TR</a></span>
       </nav>
@@ -929,7 +965,7 @@
     <section class="hero">
       <div>
         <div class="eyebrow">METU DTX Dijital Dönüşüm Platformu</div>
-        <h1>METU DTX ile Dijital Dönüşüm Yolculuğunuzu Başlatın</h1>
+        <h1>METU DTX ile Dijital Olgunluk Değerlendirmenizi Başlatın</h1>
         <p class="lead">
           METU DTX Dijital Dönüşüm Platformu, firmaları başvuru ve öz değerlendirmeden uzman incelemesine, kanıta dayalı olgunluk skorlamasına, yol haritası hazırlığına ve uygulamaya hazır proje planlamasına kadar yapılandırılmış bir süreçte yönlendirir.
         </p>
@@ -1259,7 +1295,7 @@
     <footer>
       <p>
         METU DTX — Orta Doğu Teknik Üniversitesi Dijital Dönüşüm ve İnovasyon Merkezi<br>
-        <a href="https://metudtx.com">metudtx.com</a> · <a href="https://dtx.metu.edu.tr">dtx.metu.edu.tr</a> · <a href="mailto:info@metudtx.com">info@metudtx.com</a>
+        <a href="https://metudtx.com/tr/">metudtx.com</a> · <a href="https://dtx.metu.edu.tr">dtx.metu.edu.tr</a> · <a href="mailto:info@metudtx.com">info@metudtx.com</a>
       </p>
     </footer>
   </main>
