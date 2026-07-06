@@ -111,48 +111,57 @@
     }
 
     nav {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
 
-    nav a {
-      color: var(--muted);
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 0.94rem;
-    }
+nav > a {
+  display: inline-flex;
+  align-items: center;
+  height: 44px;
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.94rem;
+  line-height: 1;
+}
 
-    nav a:hover {
-      color: var(--teal-2);
-    }
+nav > a:hover {
+  color: var(--teal-2);
+}
 
 
-    .lang-switch {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      padding: 4px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.72);
-      box-shadow: 0 8px 22px rgba(15, 31, 29, 0.05);
-    }
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 48px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 8px 22px rgba(15, 31, 29, 0.05);
+  vertical-align: middle;
+}
 
-    .lang-switch a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 36px;
-      min-height: 30px;
-      padding: 0 10px;
-      border-radius: 999px;
-      color: var(--muted);
-      font-size: 0.82rem;
-      font-weight: 900;
-      text-decoration: none;
-    }
+.lang-switch a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 40px;
+  padding: 0;
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 900;
+  line-height: 1;
+  text-decoration: none;
+}
 
     .lang-switch a.active {
       background: var(--teal);
@@ -769,7 +778,7 @@
     }
 
     .investment {
-      background: linear-gradient(135deg, var(--navy-2), var(--teal-2));
+      background: linear-gradient(135deg, var(--y-2), var(--teal-2));
       color: #fff;
       border-radius: var(--radius-xl);
       padding: 34px;
@@ -844,7 +853,7 @@
     }
 
     footer a {
-      color: var(--navy);
+      color: var(--y);
       text-decoration: none;
       font-weight: 900;
     }
@@ -894,7 +903,7 @@
         font-size: 0.72rem;
       }
 
-      nav {
+       {
         justify-content: flex-start;
       }
 
