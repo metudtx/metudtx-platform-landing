@@ -853,7 +853,7 @@ nav > a:hover {
     }
 
     footer a {
-      color: var(--y);
+      color: var(--navy);
       text-decoration: none;
       font-weight: 900;
     }
@@ -903,7 +903,7 @@ nav > a:hover {
         font-size: 0.72rem;
       }
 
-       {
+      .main-nav {
         justify-content: flex-start;
       }
 
@@ -951,23 +951,28 @@ nav > a:hover {
       }
     }
   </style>
+  <link rel="stylesheet" href="/portal-nav.css?v=1.0.0">
 </head>
 <body>
   <main class="page-shell">
     <header class="topbar">
       <a class="brand" href="https://portal.metudtx.com" aria-label="METU DTX Platform home">
         <img class="brand-mark" src="metu-dtx-logo.png" alt="METU DTX">
-        <span class="brand-copy">
-          <strong>Platform</strong>
-          <span>Digital Maturity Assessment & Transformation Roadmap</span>
-        </span>
       </a>
-      <nav aria-label="Main navigation">
-        <a href="https://metudtx.com">Gateway</a>
-        <a href="https://dtx.metu.edu.tr">METU DTX</a>
-        <a href="https://ai4gtech.metudtx.com">AI4GTech</a>
-        <a href="mailto:info@metudtx.com">Contact</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="https://portal.metudtx.com" aria-current="page">Platform</a>
+        <details class="nav-programs">
+          <summary>Programs</summary>
+          <div class="nav-programs-panel">
+            <a href="https://metudtx.com/apply/midcap/">DigitalTR</a>
+            <a href="https://ai4gtech.metudtx.com">AI4GTech Anatolia</a>
+          </div>
+        </details>
+        <a href="https://metudtx.com/news-events/">News &amp; Events</a>
+        <a href="https://dtx.metu.edu.tr">About the Centre</a>
         <span class="lang-switch" aria-label="Language selection"><a class="active" href="/">EN</a><a href="/tr/">TR</a></span>
+        <a class="nav-contact" href="https://metudtx.com/contact/">Contact</a>
+        <a class="nav-cta" href="https://metudtx.com/apply/">Applications</a>
       </nav>
     </header>
 
